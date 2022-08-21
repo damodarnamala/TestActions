@@ -5,13 +5,11 @@ on:
   pull_request:
     branches: [ "master" ]
 env:
-  DEVELOPER_DIR: /Applications/Xcode/Contents/Developer
+  DEVELOPER_DIR: /Applications/Xcode.app/Contents/Developer
 
 jobs:
   build:
-
     runs-on: macos-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Build
