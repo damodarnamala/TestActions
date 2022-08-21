@@ -1,22 +1,16 @@
+
 name: Swift
 
-on:
-  push:
-    branches: [ "master","TestBuild" ]
-  pull_request:
-    branches: [ "master" ]
+on: [push]
 
 jobs:
   build:
+
     runs-on: macos-latest
-    env:
-      XCODE_VERSION: 13.4.1
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Force Xcode
-        run: sudo xcode-select --switch /Applications/Xcode.app
+      - uses: actions/checkout@v3
       - name: Build
-        run: swift build -v
+        run: swift build
       - name: Run tests
-        run: swift test -v
+        run: swift test
