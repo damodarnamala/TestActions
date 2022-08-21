@@ -1,7 +1,8 @@
 name: Swift
 
 on:
-
+  push:
+    branches: [ "master","TestBuild" ]
   pull_request:
     branches: [ "master" ]
 env:
@@ -12,7 +13,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Force Xcode 11
+      - name: Force Xcode
         run: sudo xcode-select -switch /Applications/Xcode.app
       - name: Build
         run: swift build -v
