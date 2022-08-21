@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Force Xcode
-        run: sudo xcode-select --switch /Applications/Xcode_${{ env.XCODE_VERSION }}.app
+        run: sudo xcode-select --switch /Applications/Xcode.app
       - name: Build
         run: swift build -v
       - name: Run tests
